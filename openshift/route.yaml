@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: portfolio-route
+  namespace: portfolio-project
+  labels:
+    app: portfolio-website
+spec:
+  # Replace 'sufyan.example.com' with your actual registered domain name.
+  # Ensure you point a CNAME in your DNS host to your OpenShift router URL.
+  host: sufyan.example.com
+  to:
+    kind: Service
+    name: portfolio-service
+  port:
+    targetPort: 80
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
