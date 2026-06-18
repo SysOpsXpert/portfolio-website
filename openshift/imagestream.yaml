@@ -1,0 +1,15 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: portfolio-image
+  namespace: portfolio-project
+spec:
+  tags:
+  - name: latest
+    from:
+      kind: DockerImage
+      name: ghcr.io/sysopsxpert/portfolio-website:latest
+    referencePolicy:
+      type: Source
+    importPolicy:
+      scheduled: true # Automatically checks GHCR for updates (polls registry)

@@ -8,7 +8,7 @@ metadata:
 spec:
   # Replace 'sufyan.example.com' with your actual registered domain name.
   # Ensure you point a CNAME in your DNS host to your OpenShift router URL.
-  host: sufyan.example.com
+  host: me.sufyan.net
   to:
     kind: Service
     name: portfolio-service
