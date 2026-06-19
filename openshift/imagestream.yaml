@@ -12,4 +12,4 @@ spec:
     referencePolicy:
       type: Source
     importPolicy:
-      scheduled: true # Automatically checks GHCR for updates (polls registry)
+      scheduled: false # Set to false to disable automatic registry polling

@@ -227,7 +227,7 @@ spec:
     referencePolicy:
       type: Source
     importPolicy:
-      scheduled: true # Polls registry automatically
+      scheduled: false # Set to false to disable automatic registry polling
 ```
 
 ### 2. How to apply this setup in OpenShift
@@ -239,9 +239,12 @@ oc apply -f openshift/deployment.yaml
 oc apply -f openshift/route.yaml
 ```
 
-### 3. Verification of the CD Pipeline:
+### 3. Manual Verification & CD Execution:
 1. Make a code change in `index.html`.
 2. Push to GitHub: `git add . && git commit -m "update code" && git push`.
-3. GitHub Actions builds the image and pushes it to GHCR.
-4. OpenShift detects the new registry image and redeploys the pods.
-   *(Optional: To bypass the scheduled sync delay and trigger the import instantly, run: `oc import-image portfolio-image -n portfolio-project`)*.
+3. GitHub Actions builds the image and pushes it to GHCR *only if index.html was modified*.
+4. **Trigger Deployment Manually**: Import the new image to OpenShift to apply the update immediately:
+   ```bash
+   oc import-image portfolio-image -n portfolio-project
+   ```
+   *OpenShift will detect the import changes and initiate a rolling restart of the pods.*
