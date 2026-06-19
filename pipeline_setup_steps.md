@@ -29,7 +29,6 @@ portfolio-website/
 ├── Dockerfile                  # Container build instructions (unprivileged Nginx)
 ├── README.md                   # Setup summary documentation
 ├── pipeline_setup_steps.md     # This comprehensive step-by-step guide
-├── conversation_history.md     # Chronological log of the setup session
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions build & push pipeline
