@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SuFyan Abdalkarim — Infrastructure Projects. Kubernetes, OpenShift, VMware, and Cloud Infrastructure deployments.">
+    <title>Projects | SuFyan Abdalkarim</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Devicon & FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/shared.css">
+</head>
+<body>
+
+    <!-- Animated Background Layers -->
+    <div class="bg-gradient-mesh"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- =====================================================
+         HEADER / NAVIGATION
+    ===================================================== -->
+    <header>
+        <div class="nav-wrapper">
+            <div class="container nav-container">
+                <a href="index.html#home" class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-terminal"></i></div>
+                    sufyan<span>.sh</span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="index.html#certifications">Certs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <a href="index.html#contact" class="btn-nav-cta">
+                        <i class="fa-solid fa-network-wired"></i> SSH Connect
+                    </a>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         PROJECTS SECTION
+    ===================================================== -->
+    <section class="projects page-content" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"><i class="fa-solid fa-code-branch"></i> ls -la projects/</span>
+                <h2 class="section-title">Infrastructure Projects</h2>
+                <p class="section-subtitle">Production-grade solutions deployed at scale.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+    <footer>
+        <div class="container">
+            <a href="index.html#home" class="footer-logo">
+                <i class="fa-solid fa-terminal"></i>
+                sufyan<span>.sh</span>
+            </a>
+            <p class="footer-copy">
+                Designed &amp; automated with <span class="footer-heart">♥</span> by SuFyan Abdalkarim. © 2026
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/shared.js"></script>
+    <script src="assets/cards.js"></script>
+    <script>
+        // To add a new project, just append an object to this array.
+        const projectsData = [
+            {
+                icon: 'fa-solid fa-layer-group',
+                title: 'Enterprise Kubernetes Deployment',
+                description: 'Architected and deployed a multi-node bare-metal Kubernetes cluster with HA control planes, MetalLB load-balancing, and Ceph storage integration.',
+                tags: ['Kubernetes', 'Ansible', 'Ceph Storage', 'MetalLB'],
+                links: [
+                    { href: '#', label: 'GitHub', icon: 'fa-brands fa-github' },
+                    { href: '#', label: 'External', icon: 'fa-solid fa-arrow-up-right-from-square' }
+                ]
+            },
+            {
+                icon: 'fa-solid fa-cubes',
+                title: 'VMware vSphere Automation',
+                description: 'Automated template provisioning, storage clustering, and VM lifecycle tasks across multiple vCenters using Terraform and Ansible playbooks.',
+                tags: ['VMware ESXi', 'Terraform', 'Ansible', 'PowerCLI'],
+                links: [
+                    { href: '#', label: 'GitHub', icon: 'fa-brands fa-github' },
+                    { href: '#', label: 'External', icon: 'fa-solid fa-arrow-up-right-from-square' }
+                ]
+            },
+            {
+                icon: 'fa-solid fa-code-branch',
+                title: 'Automated CI/CD Pipeline',
+                description: 'Constructed a unified GitOps pipeline using Jenkins and ArgoCD to continuously build, security-scan, and push containers to OpenShift clusters.',
+                tags: ['ArgoCD', 'Jenkins', 'SonarQube', 'OpenShift'],
+                links: [
+                    { href: '#', label: 'GitHub', icon: 'fa-brands fa-github' },
+                    { href: '#', label: 'External', icon: 'fa-solid fa-arrow-up-right-from-square' }
+                ]
+            },
+            {
+                icon: 'fa-solid fa-shield-halved',
+                title: 'Multi-Cloud Security Landing Zone',
+                description: 'Designed security compliance structures, hub-spoke networking, and organizational policies across AWS and Azure using IaC modules.',
+                tags: ['AWS', 'Azure', 'Terraform', 'Transit Gateway'],
+                links: [
+                    { href: '#', label: 'GitHub', icon: 'fa-brands fa-github' },
+                    { href: '#', label: 'External', icon: 'fa-solid fa-arrow-up-right-from-square' }
+                ]
+            }
+        ];
+
+        renderCards('projects-grid', projectsData);
+    </script>
+</body>
+</html>
