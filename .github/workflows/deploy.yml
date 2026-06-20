@@ -7,6 +7,10 @@ on:
       - master
     paths:
       - 'index.html'
+      - 'projects.html'
+      - 'tools.html'
+      - 'assets/**'
+      - 'Dockerfile'
 
 permissions:
   contents: read
